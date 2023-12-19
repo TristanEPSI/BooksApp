@@ -36,13 +36,18 @@
            android:text="Adresse e-mail"
            android:textColor="@color/primary"
            android:textSize="20dp"
-           android:textAlignment="textStart">
+           android:textAlignment="textStart"
+           android:hint="@string/emailInput"
+           >
        </TextView>
        <EditText
+           android:id="@+id/emailInput"
            android:layout_width="match_parent"
            android:layout_height="60dp"
            android:inputType="textEmailAddress"
-           android:textColor="@color/primary">
+           android:textColor="@color/silver"
+           android:hint="@string/emailInput"
+           android:textColorHint="@color/silver">
        </EditText>
      </LinearLayout>
 
@@ -62,10 +67,13 @@
           android:textAlignment="textStart">
       </TextView>
       <EditText
+          android:id="@+id/passwordInput"
           android:layout_width="match_parent"
           android:layout_height="60dp"
           android:inputType="textPassword"
-          android:textColor="@color/primary">
+          android:textColor="@color/silver"
+          android:hint="@string/passwordInput"
+          android:textColorHint="@color/silver">
       </EditText>
     </LinearLayout>
       <LinearLayout
@@ -79,15 +87,12 @@
             android:orientation="vertical"
             android:paddingHorizontal="15dp">
           <Button
+              android:id="@+id/btnAuth"
               android:layout_width="140dp"
               android:layout_marginBottom="10dp"
-              android:layout_height="40dp"
-              android:text="Se connecter">
-          </Button>
-          <Button
-              android:layout_width="140dp"
-              android:layout_height="70dp"
-              android:text="Mot de passe oublié">
+              android:layout_height="80dp"
+              android:text="Se connecter"
+              android:onClick="onAuth">
           </Button>
         </LinearLayout>
       </LinearLayout>

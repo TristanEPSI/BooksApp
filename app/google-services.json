@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "708946854232",
+    "project_id": "booksapp-f2ff6",
+    "storage_bucket": "booksapp-f2ff6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:708946854232:android:4919721a6c4cf03653652d",
+        "android_client_info": {
+          "package_name": "com.example.booksappgottschalktristan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmXh6qNTp_BFgdWcmZb64E7g29XqtO5_k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
