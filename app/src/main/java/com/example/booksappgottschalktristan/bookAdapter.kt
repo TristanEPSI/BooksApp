@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
 class CardAdapter: RecyclerView.Adapter<BookViewHolder>() {
-    lateinit var listCards: CardsList
+    var listCards: CardsList = CardsList()
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): BookViewHolder {
         val context = viewGroup.context
@@ -21,5 +21,7 @@ class CardAdapter: RecyclerView.Adapter<BookViewHolder>() {
         holder.updateBooksList(card)
     }
 
-    override fun getItemCount(): Int = listCards.data.size
+    override fun getItemCount(): Int {
+        return listCards.data.size
+    }
 }

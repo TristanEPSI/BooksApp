@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
                             if (task.isSuccessful) {
                                 loggedIn = true
                                 Toast.makeText(this, "Succès avec cache", Toast.LENGTH_LONG).show()
-
+                                goToListBooks()
                             }
                         }
                     }
@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun goToListBooks () {
+    private fun goToListBooks () {
         val intent = Intent(this, ListBooksActivity::class.java)
         startActivity(intent)
     }

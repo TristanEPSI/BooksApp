@@ -15,7 +15,6 @@ class BookViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val cardDesc = itemView.findViewById<TextView>(R.id.bookInListDesc)
         cardName.text = card.name
         cardDesc.text = card.desc
-        Picasso.get().load(card.cardImages[0].imageUrl).into(cardImage)
+        Picasso.get().load(card.card_images[0].image_url).into(cardImage)
     }
-
 }

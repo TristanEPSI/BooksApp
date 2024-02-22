@@ -27,7 +27,7 @@
         <TextView
             android:id="@+id/bookInListDesc"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="100dp"
             android:text="Description de la carte"
             android:textAlignment="center"
             android:textColor="@color/primary"

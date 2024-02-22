@@ -1,13 +1,14 @@
+import com.fasterxml.jackson.annotation.JsonProperty
 import retrofit2.http.GET
-import java.util.Objects
-
 interface ApiService {
     @GET("cardinfo.php?banlist=ocg&has_effect=false")
     suspend fun getData(): CardsList
 }
 
+// JAkson properties Jackson COre
+
 data class CardsList(
-    val data: List<Card>
+    val data: List<Card> = listOf()
 )
 
 data class Card(
@@ -22,37 +23,43 @@ data class Card(
     val race: String,
     val attribute: String,
     val archetype: String,
-    val ygoprodeckUrl: String,
-    val cardSets: List<CardSet>,
-    val banlistInfo: BanlistInfo,
-    val cardImages: List<CardImage>,
-    val cardPrices: List<CardPrice>,
+    val ygoprodeck_url: String,
+    @JsonProperty("card_sets")
+    val card_sets: List<CardSet>,
+    @JsonProperty("banlist_info")
+    val banlist_info: BanlistInfo,
+    @JsonProperty("card_images")
+    val card_images: List<CardImage>,
+    @JsonProperty("card_images")
+    val card_prices: List<CardPrice>,
 )
 
 data class CardSet(
-    val setName: String,
-    val setCode: String,
-    val setRarity: String,
-    val setRarityCode: String,
-    val setPrice: String
+    val set_name: String,
+    val set_code: String,
+    val set_rarity: String,
+    val set_rarity_code: String,
+    val set_price: String
 )
 
 data class BanlistInfo(
-    val banTcg: String,
-    val banOcg: String
+    val ban_tcg: String,
+    val ban_ocg: String
 )
 
 data class CardImage(
     val id: Int,
-    val imageUrl: String,
-    val imageUrlSmall: String,
-    val imageUrlCropped: String
+    @JsonProperty("imageUrl")
+    val image_url: String,
+    @JsonProperty("image_url_small")
+    val image_url_small: String,
+    val image_url_cropped: String
 )
 
 data class CardPrice(
-    val cardmarketPrice: String,
-    val tcgplayerPrice: String,
-    val ebayPrice: String,
-    val amazonPrice: String,
-    val coolstuffincPrice: String
+    val cardmarket_price: String,
+    val tcgplayer_price: String,
+    val ebay_price: String,
+    val amazon_price: String,
+    val coolstuffinc_price: String
 )

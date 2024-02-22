@@ -11,10 +11,10 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class ListBooksActivity : AppCompatActivity() {
-private var booksListNode: RecyclerView = findViewById(R.id.books_list)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.list_books)
+        var booksListNode: RecyclerView = findViewById(R.id.books_list)
 
         // Layout Manager
         val layoutManager = LinearLayoutManager(this)
@@ -24,7 +24,7 @@ private var booksListNode: RecyclerView = findViewById(R.id.books_list)
         val cardAdapter = CardAdapter()
         booksListNode.adapter = cardAdapter
 
-        // TODO : Appeler ici l'aPI , après reception
+        // API Call and request
         val service = RetrofitInstance.apiService
         CoroutineScope(Dispatchers.IO).launch {
             try {
