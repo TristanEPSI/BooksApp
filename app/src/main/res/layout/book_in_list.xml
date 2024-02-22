@@ -8,12 +8,31 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/silver">
+        android:padding="30dp"
+        android:background="@color/black">
         <TextView
             android:id="@+id/bookInListName"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:textColor="@color/design_default_color_on_primary">
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="@color/design_default_color_on_primary"
+            android:text="Titre de la carte">
+        </TextView>
+        <ImageView
+            android:id="@+id/bookInListImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+        </ImageView>
+        <TextView
+            android:id="@+id/bookInListDesc"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:text="Description de la carte"
+            android:textAlignment="center"
+            android:textColor="@color/primary"
+            android:gravity="center"
+            >
         </TextView>
 
     </LinearLayout>

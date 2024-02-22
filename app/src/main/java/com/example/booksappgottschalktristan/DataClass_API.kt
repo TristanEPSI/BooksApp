@@ -1,11 +1,14 @@
 import retrofit2.http.GET
+import java.util.Objects
 
 interface ApiService {
-    @GET("banlist=ocg&has_effect=false")
-    suspend fun getData(): List<Card>
+    @GET("cardinfo.php?banlist=ocg&has_effect=false")
+    suspend fun getData(): CardsList
 }
 
-
+data class CardsList(
+    val data: List<Card>
+)
 
 data class Card(
     val id: Int,
@@ -23,7 +26,7 @@ data class Card(
     val cardSets: List<CardSet>,
     val banlistInfo: BanlistInfo,
     val cardImages: List<CardImage>,
-    val cardPrices: List<CardPrice>
+    val cardPrices: List<CardPrice>,
 )
 
 data class CardSet(

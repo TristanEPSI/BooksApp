@@ -1,12 +1,14 @@
 package com.example.booksappgottschalktristan
 
 import Card
+import CardsList
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-class BookAdapter : RecyclerView.Adapter<BookViewHolder>() {
-    var listCards = listOf<Card>()
+class CardAdapter: RecyclerView.Adapter<BookViewHolder>() {
+    lateinit var listCards: CardsList
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): BookViewHolder {
         val context = viewGroup.context
@@ -15,9 +17,9 @@ class BookAdapter : RecyclerView.Adapter<BookViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: BookViewHolder, position: Int) {
-        val book = listCards[position]
-        holder.updateBooksList(book)
+        val card = listCards.data[position]
+        holder.updateBooksList(card)
     }
 
-    override fun getItemCount(): Int = listCards.size
+    override fun getItemCount(): Int = listCards.data.size
 }
