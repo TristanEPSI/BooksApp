@@ -1,5 +1,6 @@
 package com.example.booksappgottschalktristan
 
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
@@ -10,15 +11,14 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
-
   private lateinit var inputEmail : EditText
   private lateinit var inputPassword: EditText
   private lateinit var preferences: SharedPreferences
   private var loggedIn: Boolean = false
 
-
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Authentification part
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         auth = FirebaseAuth.getInstance()
@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
                             if (task.isSuccessful) {
                                 loggedIn = true
                                 Toast.makeText(this, "Succès avec cache", Toast.LENGTH_LONG).show()
+
                             }
                         }
                     }
@@ -61,6 +62,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun goToListBooks () {
+        val intent = Intent(this, ListBooksActivity::class.java)
+        startActivity(intent)
+    }
+
     fun onAuth(view: View) {
         val email = getValInput(inputEmail)
         val password = getValInput(inputPassword)
@@ -75,7 +81,8 @@ class MainActivity : AppCompatActivity() {
                         updateEmailPreference(email)
                         updatePasswordPreference(password)
                         loggedIn = true
-                        Toast.makeText(this, "Success", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, "Connexion réussie", Toast.LENGTH_LONG).show()
+                        goToListBooks()
                     } else {
                         Toast.makeText(this, "Erreur d'email ou mot de passe", Toast.LENGTH_LONG)
                             .show()
