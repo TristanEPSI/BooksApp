@@ -2,5 +2,6 @@
     <string name="app_name">BooksApp GOTTSCHALK Tristan</string>
     <string name="emailInput">Entrez une adresse mail</string>
     <string name="passwordInput">Entrez un mot de passe</string>
+    <string name="plus_d_informations">Plus d\'informations</string>
 
 </resources>
