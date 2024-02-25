@@ -28,25 +28,88 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:text="Title Book"
+                android:id="@+id/detailsCardTitle"
+                android:text="Title Card"
                 android:textSize="20dp"
                 android:textAlignment="center"
                 android:textColor="@color/silver">
             </TextView>
 
-            <TextView
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:text="Resume"
-                android:textColor="@color/silver">
+                android:layout_height="200dp"
+                android:id="@id/detailsCardImage">
 
-            </TextView>
-            <FrameLayout
+            </ImageView>
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="fill_parent"
-                android:background="@drawable/library_home"
-                >
-            </FrameLayout>
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/detailsCardAtk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewStart"
+                    android:layout_weight="0.5"
+                    android:text="Atk: "
+                    android:textColor="@color/primary"
+                    >
+                </TextView>
+                <TextView
+                    android:id="@+id/detailsCardDef"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewStart"
+                    android:layout_weight="0.5"
+                    android:text="Def: "
+                    android:textColor="@color/primary"
+                    >
+                </TextView>
+                <TextView
+                    android:id="@+id/detailsCardID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewEnd"
+                    android:layout_weight="1"
+                    android:text="ID:  "
+                    android:textColor="@color/primary"
+                    >
+                </TextView>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/detailsCardDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textColor="@color/silver">
+            </TextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+                <TextView
+                    android:id="@+id/detailsCardPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Price"
+                    android:textAlignment="viewStart"
+                    android:layout_weight="1"
+                    android:textColor="@color/silver">
+                </TextView>
+                <Button
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewEnd"
+                    android:layout_weight="1"
+                    android:text="Retour"
+                    android:onClick="goToListBook"
+                    >
+
+                </Button>
+            </LinearLayout>
 
         </LinearLayout>
 

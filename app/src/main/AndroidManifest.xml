@@ -25,6 +25,11 @@
             android:exported="true"
             android:label="ListBooks">
         </activity>
+        <activity
+            android:name=".DetailsCardActivity"
+            android:exported="true"
+            android:label="DetailsCard">
+        </activity>
     </application>
 
 </manifest>
